@@ -25,12 +25,11 @@ var transporter = nodemailer.createTransport({
 });
 
 app.post("/api/v1/email", (req, res) => {
-  const { email, subject, message } = req.body;
+  const { email, subject } = req.body;
 
   var emailPayload = {
     email,
     subject,
-    message,
   };
 
   publishMessage(emailPayload)

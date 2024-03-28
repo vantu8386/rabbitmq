@@ -12,11 +12,11 @@ module.exports = {
         }
       },
       {
-        name: 'emailWorker',
+        name: '',
         args: 'consumeMessage',
         exec_mode: 'fork',
         watch: false,
-        script: 'emailWorker.js',
+        script: '',
         instances: '1'
       }
     ]

@@ -1,8 +1,8 @@
-// email.service.js
 const fs = require("fs");
 const nodemailer = require("nodemailer");
+
 module.exports = {
-  async sendMail(to, subject, message) {
+  async sendMail(to, subject) {
     let transporter = nodemailer.createTransport({
       service: "Gmail",
       auth: {
@@ -10,11 +10,15 @@ module.exports = {
         pass: "fjyjxuvtfghsmqbw",
       },
     });
+
+    // Sử dụng đường dẫn tuyệt đối đến file HTML
+    const htmlFilePath = "../templateEmail/index.html"; // Thay thế bằng đường dẫn thực tế của bạn
+
     let mailOptions = {
       from: "nguyenvantu131197@gmail.com",
       to: to,
-      subject: subject || "test",
-      html: htmlContent,
+      subject: subject || "test1",
+      html: fs.readFileSync(htmlFilePath, "utf-8"),
     };
 
     return new Promise((resolve, reject) => {
