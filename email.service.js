@@ -12,7 +12,7 @@ module.exports = {
     });
 
     // Sử dụng đường dẫn tuyệt đối đến file HTML
-    const htmlFilePath = "../templateEmail/index.html"; // Thay thế bằng đường dẫn thực tế của bạn
+    const htmlFilePath = "./index.html"; // Thay thế bằng đường dẫn thực tế của bạn
 
     let mailOptions = {
       from: "nguyenvantu131197@gmail.com",
